@@ -11,4 +11,9 @@ jobs:
           cache: npm
       - run: make setup
       - run: make test
-      - run: make lint          
+      - run: make lint        
+
+      - uses: snyk/actions/node@master  
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          
